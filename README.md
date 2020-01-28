@@ -10,8 +10,8 @@ When creating this resource you can take namespace policies (or policies from mu
 Application `granny` running in production: 
 ```hcl
 module "ns_granny_prod" {
-  source = "../namespace"
-  
+  source  = "kiwicom/devs-permissions/vault"
+  version = "1.0.0"  
   ...
   
   additional_policies = [
@@ -30,6 +30,9 @@ module "ns_granny_prod" {
 Granny devs
 ```hcl
 module "automation_granny_devs" {
+  source  = "kiwicom/devs-permissions/vault"
+  version = "1.0.0"  
+ 
   groups = [
     "engineering.automation"
   ]
